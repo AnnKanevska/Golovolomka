@@ -3,29 +3,29 @@ package conundrum_Task1;
 import java.util.Scanner;
 public class Task1 {
 	public static void main(String[] args){
-		boolean control=false;//äëÿ ïğîâåğêè çàïèñè ïğàâèëüíîé äàòû
+		boolean control=false;//Ğ´Ğ»Ñ Ğ¿Ñ€Ğ¾Ğ²ĞµÑ€ĞºĞ¸ Ğ·Ğ°Ğ¿Ğ¸ÑĞ¸ Ğ¿Ñ€Ğ°Ğ²Ğ¸Ğ»ÑŒĞ½Ğ¾Ğ¹ Ğ´Ğ°Ñ‚Ñ‹
 		byte day,month;short year;
 		Scanner in = new Scanner(System.in);
         System.out.println("Enter the date");
         do{
         	System.out.print("day:");
-        	day=in.nextByte();// çàïèñü äíÿ
+        	day=in.nextByte();// Ğ·Ğ°Ğ¿Ğ¸ÑÑŒ Ğ´Ğ½Ñ
         	if (day>=1 || day<32) control=true;
         	else{System.out.println("Oops! Date should be in the range from 1 to 31. Try again.");}
         }
         while(control==false);
-        control=false;// "Îáíóëåíèå";
+        control=false;// "ĞĞ±Ğ½ÑƒĞ»ĞµĞ½Ğ¸Ğµ";
         do{ 
         	System.out.print("month:");
-            month=in.nextByte();//çàïèñü ìåñÿöà
+            month=in.nextByte();//Ğ·Ğ°Ğ¿Ğ¸ÑÑŒ Ğ¼ĞµÑÑÑ†Ğ°
             if (month>=1 || month<=12) control=true;
         	else{System.out.println("Oops! Date should be in the range from 1 to 12. Try again.");}
         } 
         while(control==false);
-        control=false;// "Îáíóëåíèå";
+        control=false;// "ĞĞ±Ğ½ÑƒĞ»ĞµĞ½Ğ¸Ğµ";
         do{  
         	System.out.print("year (4 digits):");
-            year=in.nextShort();//çàïèñü ãîäà
+            year=in.nextShort();//Ğ·Ğ°Ğ¿Ğ¸ÑÑŒ Ğ³Ğ¾Ğ´Ğ°
             if (year>=1000 || year<=9999) control=true;
         	else{System.out.println("Oops! The number must contain 4 digits. Try again.");}
         }while(control==false);
@@ -37,12 +37,13 @@ public static int toint(byte day, byte month, short year){
 	int date=day*1000000+month*10000+year;
 	return (date);
 }
+
 public static void fromint(int date){
 	byte d=(byte)(date/1000000);
 	byte m=(byte)((date-(d*1000000))/10000); 
 	short y=(short)(date%10000);
 	System.out.print("day:"+d+"; month:"+m+"; year:"+y);
-	// from INT
+	
 }
 
 }
